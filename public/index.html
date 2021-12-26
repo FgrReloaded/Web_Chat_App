@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Fgr Local Chat</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script> -->
+    <script defer src="http://localhost:4000/socket.io/socket.io.js"></script>
+    <script type="application/javascript" defer src="js/script.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row main-title justify-content-center">
+            <div class="col-12 text-center p-3 title">
+                <i class="fa-duotone fa-2xl fa-comment-dots mx-3"
+                    style="--fa-secondary-color: orangered; --fa-primary-color: #2196f3;" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"></i>Fgr Local Chat
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-danger d-none my-3" id="alertN" role="alert">Enter Your Name Please!!!</div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-10 col-12">
+                <div class="box mx-auto">
+                    <div class="content">
+                        
+                        <div class="msg mx-2 mb-2 align-self-start order-last" id="typing"></div>
+                    </div>
+                    <!-- <form> -->
+                        <input type="text" required id="text"  autofocus placeholder="Enter your Name To Continue"> 
+                        <button class="btn btn-danger" type="submit"  id="user" onclick="start()">Start Chat</button>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-center" id="offcanvasExampleLabel"></h5>
+
+          <button type="button" class="text-reset close-btn" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+        </div>
+        <div class="offcanvas-body" id="userList">
+            
+        </div>
+      </div>
+    <div class="container-fluid send-box d-none" id="send-box1">
+        <div class="row align-items-center">
+            <div class="col-10 mx-auto text-center justify-content-center d-flex ">
+                <form class="d-flex" id="send">
+                    <input type="text"  class="msg-box" id="msginp" rows="1">
+                    <input type="submit" class="btn btn-info btn-sm" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
